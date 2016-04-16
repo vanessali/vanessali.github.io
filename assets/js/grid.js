@@ -122,17 +122,6 @@ var Grid = (function() {
 			return false;
 
 		} );
-		// $items.on( 'click', 'span.og-close', function() {
-		// 	hidePreview();
-		// 	return false;
-		// } ).children( '.hovereffect' ).on( 'click', function(e) {
-
-		// 	var $item = $( this ).parent();
-		// 	// check if item already opened
-		// 	current === $item.index() ? hidePreview() : showPreview( $item );
-		// 	return false;
-
-		// } );
 	}
 
 	function getWinSize() {
@@ -141,7 +130,7 @@ var Grid = (function() {
 
 	function showPreview( $item ) {
 
-		var preview = $.data( this, 'preview' )
+		var preview = $.data( this, 'preview' );
 		
 		// if a preview exists and previewPos is different (different row) from item´s top then close it
 		if( typeof preview != 'undefined' ) {
@@ -189,8 +178,7 @@ var Grid = (function() {
 			this.$background = $( "#headerwrap" );
 
 			this.$background.append( this.getEl() );
-			// append preview element to the item
-			// this.$item.append( this.getEl() );
+
 			// set the transitions for the preview and the item
 			if( support ) {
 				this.setTransition();
@@ -240,6 +228,8 @@ var Grid = (function() {
 			// for smaller screens we don´t display the large image (the media query will hide the fullimage wrapper)
 			if( self.$fullimage.is( ':visible' ) ) {
 				this.$loading.show();
+				console.log('Preloading image: ' + self.$item.data('largesrc'));
+
 				$( '<img/>' ).load( function() {
 					var $img = $( this );
 					if( $img.attr( 'src' ) === self.$item.data( 'largesrc' ) ) {
@@ -290,8 +280,14 @@ var Grid = (function() {
 
 		},
 		calcHeight : function() {
-			var detailsHeight = this.$title.height() + this.$description.height() + this.$tools.height();
-			var maxItemHeight = Math.max(detailsHeight, this.$largeImg.height());
+			var imgHeight = 0;
+
+			var detailsHeight = this.$title.height() + this.$description.height() + this.$tools.height() + this.$href.outerHeight(true);
+			if (this.$largeImg != null) {
+				imgHeight = this.$largeImg.height()
+			}
+
+			var maxItemHeight = Math.max(detailsHeight, imgHeight);
 			
 			var heightPreview = maxItemHeight + 100;
 
@@ -324,15 +320,6 @@ var Grid = (function() {
 
 		},
 		positionPreview : function() {
-
-			// scroll page
-			// case 1 : preview height + item height fits in window´s height
-			// case 2 : preview height + item height does not fit in window´s height and preview height is smaller than window´s height
-			// case 3 : preview height + item height does not fit in window´s height and preview height is bigger than window´s height
-			// var position = this.$item.data( 'offsetTop' ),
-			// 	previewOffsetT = this.$previewEl.offset().top - scrollExtra,
-			// 	scrollVal = this.height + this.$item.data( 'height' ) + marginExpanded <= winsize.height ? position : this.height < winsize.height ? previewOffsetT - ( winsize.height - this.height ) : previewOffsetT;
-			
 			$body.animate( { scrollTop : 0 }, settings.speed );
 
 		},
@@ -345,7 +332,7 @@ var Grid = (function() {
 		getEl : function() {
 			return this.$previewEl;
 		}
-	}
+	};
 
 	return { 
 		init : init,
