@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+	<title>Vanessa Li</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="assets/css/style.css" rel="stylesheet">
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Static navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">VANESSA LI</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li class="active dropdown"><a href="#works" class="dropdown-toggle" data-toggle="dropdown">Works  <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="sound-thoughts.html">Sound Thoughts</a></li>
+						<li><a href="battery.html">Delineated Echoes</a></li>
+						<li><a href="codepath.html">Codepath</a></li>
+						<li><a href="visualizer.html">Arduino Visualizer</a></li>
+						<li><a href="bsim.html">Binaural Speech Intelligibility Model</a></li>
+						<li><a href="asa.html">Acoustic Design</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<div class="container work mt-lg mb">
+	<h2>Time Shifting Phase Vocoder</h2>
+	<p class="mt">A final project for Music and Computing course at McGill University.</p>
+
+	<p class="mt"><b>Objectives</b><br>To build a phase vocoder in Max/MSP that allows for time compression and expansion while retaining the frequency and phase content.</p>
+
+	<p class="mt"><b>Methodology</b><br>The phase vocoder was implemented in the frequency domain using the pfft~ object. An audio file is read into a buffer, which is then sent through the pfft~ object for analysis. The window size of my fft is 1024 samples with a factor of 16 overlap. The analyzed signal is recorded into a two-channel buffer which holds the amplitude and phase data of each frame. Each frame can then be accessed and resynthsized using a wavetable. This specific implementation was based on <a href="http://music.calarts.edu/~cbaker/software.html">Cooper Baker's</a> phase vocoder sampler patch.</p>
+
+	<p class="mt">The rate at which signal is played back is determined by a lookup table that indicates which frames are to be resynthsized. The available waveforms for the lookup table to choose from are a phasor (linear ramp from 0-1), a sinusoidal signal (a cosine shifted and scaled by a value of +0.5 to be confined within 0 and 1), a wavetable (user can choose from presets or draw their own non-linear waveform) and a selected region of audio, which the user can use to scrub through the buffered sample.</p>
+
+	<p class="exhibited">McGill University, Montreal. April 2007</p>
+	<p class="tools">Max/MSP</p>
+
+	<div class="row mt mb">
+		<div class="col-lg-6"><img class="img-responsive" src="assets/img/main.tiff"></div>
+		<div class="col-lg-6"><img class="img-responsive" src="assets/img/pvoc.tiff"></div>
+	</div>
+
+</div><!--/container -->
+
+<div id="footerwrap">
+	<div class="container">
+		<div class="row centered">
+			<div class="col-lg-4 visible-lg">
+				<p><b>DEVELOPER, SOUND TECHNOLOGIST</b></p>
+			</div>
+
+			<div class="col-lg-4 visible-lg">
+				<p>San Francisco 2017</p>
+			</div>
+			<div class="col-lg-4">
+				<p>vanessa dot li at gmail dot com</p>
+			</div>
+		</div>
+	</div>
+</div><!--/footerwrap -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
