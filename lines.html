@@ -40,7 +40,7 @@
 				<li class="active dropdown"><a href="#works" class="dropdown-toggle" data-toggle="dropdown">Works  <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li><a href="sound-thoughts.html">Sound Thoughts</a></li>
-						<li><a href="lines.html">Lines and EEG</a></li>
+						<li class="active"><a href="#">Lines and EEG</a></li>
 						<li><a href="battery.html">Delineated Echoes</a></li>
 						<li><a href="visualizer.html">Arduino Visualizer</a></li>
 						<li><a href="bsim.html">Binaural Speech Intelligibility Model</a></li>
@@ -54,23 +54,25 @@
 
 
 <div class="container work mt-lg mb">
-	<h2>Time Shifting Phase Vocoder</h2>
-	<p class="mt">A final project for Music and Computing course at McGill University.</p>
+	<div class="row">
+		<div class="col-lg-6">
+			<h2>Lines and EEG</h2>
+			<p class="mt">Lines and EEG is an installation by Joty Dhaliwal and Vanessa Li, mapping readings from an EEG to a projection mapped generative line design.</p>
+			<p class="mt">EEG measures the synchronized activity of voltage change across large groups of neurons. While the measurement tool is not fine enough to measure individual neurons and the reactionary internal voltage spikes that are caused by stimuli, the EEG can measure voltage changes on the exterior parts of the neuron and allow us to guess how a neuron might react (voltage spike or not). EEG readings observe a macro oscillation that we then interpret through frequency and label brainwave.</p>
+			<p class="mt">This installation explores the electrical aspect of brain activity by visually representing these electrical movements to the viewer. While the aesthetic presentation does not lead to accurate readings, we hope viewers find our fascination with wavelengths, electricity and the brain interesting to contemplate.</p>
 
-	<p class="mt"><b>Objectives</b><br>To build a phase vocoder in Max/MSP that allows for time compression and expansion while retaining the frequency and phase content.</p>
+			<p class="exhibited">Exhibited at <a href="http://spektrumberlin.de/home.html">Spektrum</a> May 2017, Berlin.</p>
+			<p class="tools">Resolume, Processing, Muse OSC</p>
 
-	<p class="mt"><b>Methodology</b><br>The phase vocoder was implemented in the frequency domain using the pfft~ object. An audio file is read into a buffer, which is then sent through the pfft~ object for analysis. The window size of my fft is 1024 samples with a factor of 16 overlap. The analyzed signal is recorded into a two-channel buffer which holds the amplitude and phase data of each frame. Each frame can then be accessed and resynthsized using a wavetable. This specific implementation was based on <a href="http://music.calarts.edu/~cbaker/software.html">Cooper Baker's</a> phase vocoder sampler patch.</p>
-
-	<p class="mt">The rate at which signal is played back is determined by a lookup table that indicates which frames are to be resynthsized. The available waveforms for the lookup table to choose from are a phasor (linear ramp from 0-1), a sinusoidal signal (a cosine shifted and scaled by a value of +0.5 to be confined within 0 and 1), a wavetable (user can choose from presets or draw their own non-linear waveform) and a selected region of audio, which the user can use to scrub through the buffered sample.</p>
-
-	<p class="exhibited">McGill University, Montreal. April 2007</p>
-	<p class="tools">Max/MSP</p>
-
-	<div class="row mt mb">
-		<div class="col-lg-6"><img class="img-responsive" src="assets/img/main.tiff"></div>
-		<div class="col-lg-6"><img class="img-responsive" src="assets/img/pvoc.tiff"></div>
+			<div class="nav-page prev col-xs-5 centered"><a href="sound-thoughts.html">Sound Thoughts</a></div>
+			<div class="nav-page next col-xs-5 pull-right centered"><a href="battery.html">Delineated Echoes</a></div>
+		</div>
+		<div class="col-lg-6">
+			<div class="embed-responsive embed-responsive-16by9">
+				<iframe src="https://player.vimeo.com/video/225633846" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			</div>
+		</div>
 	</div>
-
 </div><!--/container -->
 
 <div id="footerwrap">
