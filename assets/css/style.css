@@ -67,7 +67,7 @@ html{
 body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     background-color: #f2f2f2;
     height: 100%;
     margin: 0;
@@ -320,7 +320,7 @@ h1, h2, h3, h4, h5, h6 {
 	color:#ffffff;
 	padding: 16px 10px 16px 10px;
 	/*letter-spacing: 2px;*/
-	font-size: 18px;
+	font-size: 16px;
 	/*font-weight: bold;*/
 }
 
@@ -333,7 +333,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Masonry */
 .grid-item { 
 	margin:0px 0px 0px 0px; 
-	display: block;
+	display: compact;
 	float: left;
 	padding: 7px;
 	width: 25%;
