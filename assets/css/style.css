@@ -13,7 +13,7 @@
    Base Styles, Bootstrap Modifications & Fonts Import
    ========================================================================== */
 
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(//fonts.googleapis.com/css?family=Montserrat:400,700);
 
 
 ::-moz-selection {
@@ -55,6 +55,14 @@
 
 .mt-lg {
 	margin-top: 80px;
+}
+
+.ml {
+	margin-left: 20px;
+}
+
+.mr {
+	margin-right: 20px;
 }
 
 .mb {
