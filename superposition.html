@@ -106,7 +106,7 @@
                 Time is projected onto the XY-plane; one must move to "hear" sound as a dynamic object changes through
                 time and space. It is up to them, based on their behaviour, how to study the many facets of
                 sound: to perceive from the microscopic perspective through subtle shifts in position, or
-                understand from a macro level using grand gestures, aligning closely to a 'temporal' listening,
+                understand from a macro level using grand gestures, aligning closely to 'temporal' listening,
                 though not necessarily 'in time'. </p>
         </div>
         <div class="col-lg-6">
@@ -125,7 +125,7 @@
         <div class="col-lg-12">
             <p>The 4DSOUND technology is the driving force behind the work and research at the Spatial Sound Institute.
                 Its intuitive software interface offers artists a wide palette of creative tools to
-                shape and mold sound in space. But it is more than an interface--it becomes an instrument connected
+                shape and mold sound in space. But it is more than an interface—it becomes an instrument connected
                 to the space in which listeners actively participate in the composition itself. Its graphical 3D interface
                 allows artists the ability to visualize and choreograph a sound object's movement through space. Virtual sound
                 environments can be constructed that otherwise cannot physically exist, yet at the same time,
@@ -211,11 +211,11 @@
             <h6>SOUND DESIGN</h6>
 
             <p>Coming into this project I had a few unknowns concerning sound design, the main being, how to generate
-                sounds “outside of time”. Coming into the project, I had decided on an analysis-synthesis approach
+                sounds “outside of time”. I initially approached the problem by testing out an analysis-synthesis technique
                 to recreate sound from any point in time by breaking down a sound buffer into overlapping time windows.
                 Each window undergoes a fast Fourier transform to determine amplitude and phase information for a given
                 frequency, then finally the signal is reconstituted with sinusoidal synthesis, allowing the frequency
-                content to be maintained at any speed of playback. After some experiments failing to synthesize anything
+                content to be maintained at any speed of playback. After experiments failed to synthesize something
                 that didn't exhibit an unpleasant synthetic metallic sound, I quickly decided I needed another approach.
             </p>
             <p>
@@ -225,16 +225,16 @@
                 Sound, like space, can be reduced down to unitary particles, and granular synthesis grew out of his
                 reflection on the nature of sound, space, and time in the context of quantum mechanics and relativity
                 theory. It is a compositional technique built from small particles, or grains, typically 10-50ms in
-                duration and assembled based on probability distributions to achieve clouds of sound possessing
-                timbre and macro structure very different from the original source. Particles are layered with stochastic
-                variation in size, amplitude, speed, pitch, density, etc. to create textural patterns that vary over time.
+                duration and assembled based on probability distributions to achieve clouds of sound exhibiting
+                timbre and macro structures very different from the original source. Particles are layered with stochastic
+                variation in size, amplitude, speed, pitch, and density, to create textural patterns that vary over time.
             </p>
             <p>I approached granular synthesis more as a tool to move about the timeline while maintaining fidelity to
-                the original sound material, which meant often using larger grain sizes with durations ranging between 100ms and 1000ms.
-                Sound synthesis with varying properties of grains is akin to working with different brush strokes, paintbrushes,
+                the original sound material, which required using larger grain sizes with durations often ranging between 100ms and 1000ms.
+                Synthesizing sounds using grains with varying properties is akin to working with different brush strokes, paintbrushes,
                 and materials to create an impressionistic or pointillistic sonic picture. Choice in grain size, density,
                 playback rate, all factor in to create an overall texture, rhythm, and structure that evokes a
-                familiar scene. Most importantly, this technique allows a way to organically synthesize sound from a
+                familiar scene. Most importantly, this technique granted me a way to organically synthesize sound from a
                 continuous timeline at any point in time.
             </p>
             <p>The next question after settling on technique was then to choose sonic material that is interesting and
@@ -246,17 +246,18 @@
             <img class="mt img-responsive" src="assets/img/funkhaus-dev.JPG">
         </div>
         <div class="col-lg-12">
-            <p> The first study took field
-                recordings of familiar sounds with a repetitive structure that can be studied from many perspectives
-                to reveal properties that provokes wonder in the listener. The second and third studies borrow
-                musical excerpts Für Alina and Summa, respectively, both by the composer Arvo Pärt. These pieces are
+            <p> The first study uses field recordings of familiar sounds with a repetitive structure that can be studied
+                from many perspectives. With a greater range of variability, these everyday sounds are scaled and
+                transformed in ways that reveal sonic properties not typically apparent. The second and third studies borrow
+                musical excerpts from Für Alina and Summa, respectively, both by the composer Arvo Pärt. These pieces are
                 minimalist and contemplative in their notation and harmonic content and written using Pärt’s
                 tintinnabuli style, a compositional technique featuring simple melodies with triadic arpeggiation in the
                 harmony<sup>6</sup>. The singular tonality—there is no tension/release or harmonic progression—allows for a
-                continuity in the music when heard non-linearly in time. Source material is not the only factor in determining the sonic quality and flow of a musical piece.
+                continuity in the music when heard non-linearly in time. Source material was not the only factor in
+                determining the sonic quality and flow of a musical piece.
                 The various parameters for synthesizing playback are just as influential in creating a compelling sound
-                quality befitting its mood, and allowing multiple voices work in dialogue with another, whether
-                complementary or through contrast. </p>
+                quality befitting its mood, and allowing multiple voices to work in dialogue with one another, whether
+                be it in harmony or counterpoint. </p>
         </div>
     </div>
     <div class="row">
@@ -264,17 +265,18 @@
             <h6 class="mt">POSITION TRACKING</h6>
             <p>Pozyx Labs<sup>7</sup>, a company that offers affordable and arduino-compatible position
                 tracking kits for development, provided the tracking system and technical support for the initial setup.
-                The system uses a wireless radio technology called ultra-wideband (UWB), which offers high precision
-                down to about 10 cm that can cover a range of 30 m by communicating over a wide frequency bandwidth.
-                The relative ease of setup and calibration along with clear documentation made it a perfect fit for
-                integrating with the 4DSOUND system.</p>
+                The system uses a wireless radio technology called ultra-wideband (UWB), offering high precision
+                to about 10 cm while covering a range of about 30 meters.
+                The tags also come equipped with a magnetometer, accelerometer, and gyroscope that can be leveraged for
+                additional data. With its simple setup and calibration, along with clear documentation,
+                the Pozyx trackers were a perfect fit for integrating into the 4DSOUND system.</p>
             <p>Six Pozyx anchors are secured around the room at various heights for sensing position data. A master
-                Pozyx tag is connected via USB to the server for gathering position coordinates of the tags for
-                tracking. The master collects position data from active tags broadcasted from their UWB antenna, which
-                can then be accessed by the server for further processing. Using the libraries provided by the Pozyx
+                Pozyx tag is connected via USB to the server for gathering position coordinates from the tracker tags.
+                The master collects data from active tags broadcasting coordinates from their UWB antenna, which
+                can then be accessed by the server for further processing. Using libraries provided by the Pozyx
                 team, it is relatively straightforward to develop a server that can be run from a laptop, raspberry pi,
-                or arduino. The tags also come equipped with a magnetometer, accelerometer, and gyroscope that can be
-                leveraged for additional data.
+                or arduino. For this project, I developed a python server on my laptop to communicate with other software
+                using the OSC (open sound control) protocol.
             </p>
 
         </div>
@@ -286,27 +288,27 @@
         <div class="col-lg-12">
             <h6>SPATIALIZATION</h6>
 
-            The spatial distribution of sounds for each tracked individual is built around 6 channels, each assigned
-            a 4D sound object. Four planes surround the listener at about chest height extending to above the head that
-            follows them along their path, giving the impression of immersion in a virtual sound space. Two additional
-            channels are placed above and below the listener and mapped to two different sound buffers. These extra
-            channels allowed experimentation with different layers of sound. The total individual sound space comprised
-            of these six sound planes remain with the observers the entire time. The tracked observer is immersed in
-            this sound space, who create spatial movement for the other audience members to hear and observe.
-
-            For the textural soundscape, bubbling sounds are heard from below the listener only at specific
-            locations of the room. For the musical scenes, I layered clips taken from different points in time and placed
-            above and below the listener to offer some counterpoint to the main audio. The generated sounds were
+            <p>The spatial distribution of sounds for each tracked individual is built around 6 channels, each assigned
+            a 4D sound object. This sound field follows them along their path, giving the impression of immersion in a
+            virtual sound space. While the tracked observer is immersed in this sound space that is seemingly omnipresent
+            from their own perspective, their motion through space creates spatial movement that other audience members
+                can hear as well as observe.</p>
+            <p>Four planes surround the listener at about chest height and extend just beyond head height with
+            two additional channels placed above and below, mapping to different sound sources. The extra channels allow
+            further experimentation with layering of sound. For the textural soundscape, bubbling sounds are heard from
+            below the listener only at specific locations of the room.
+            For the musical scenes, I layered clips taken from different points in time and placed above and below the
+            listener to offer some counterpoint to the main audio. The generated sounds were
             stochastically panned for each of the 4 main channels. In the future, developing tools to allow for finer
-            control of panning grains around the listener would create a more stimulating and visceral effect on the
-            tracked observer.
+            control of panning around the listener would create a more stimulating and visceral effect.</p>
         </div>
     </div>
     <div class="row">
-        <div class="mt col-lg-6">
+        <div class="col-lg-6">
             <h5 class="mt">RESULTS AND FEEDBACK</h5>
             <p>The presentation was set up such that the audience would first experience the installation
-                over a 40-minute run with minimal introduction to the project itself, followed by an artist talk and time
+                over a 40-minute run with minimal introduction to the project itself, followed by an artist talk and
+                time allotted
                 to gather audience feedback. This allowed for a sense of discovery and exploration to naturally arise.
                 Some people were immediately drawn to the interaction and driven by curiosity to play with the
                 interaction between movement and the generated sound. Others did not participate in the interaction and
@@ -314,16 +316,16 @@
                 other to create an evolving and dynamic experience.
             </p>
 
-            <p>Interestingly, the most notable impact on the audience was the social-behavioural experience. Because no
-                entry or exit was allowed once the presentation began, it allowed for a rapport to develop
+            <p>Interestingly, the most notable impact on the audience was the social-behavioural aspect. Because no
+                entry or exit was allowed once the presentation started, it allowed for a rapport to develop
                 over the course of the piece. As people acquaint themselves with the environment and with each other,
                 a freedom in movement emerges that feeds into the group dynamic—one person starts a trend that leads
-                to others, extending that movement into a new trend, thus evolving into a kinetic dialog.
+                to others extending that movement into a new trend, thus evolving into a kinetic dialog.
                 The initial trepidation wears off as soon as one or more people break the ice. Audience members begin to
                 feel a connecting fabric slowly weave people together as the piece progresses and the tracker is passed one by
-                one between listeners. Afterwards, some members related a strong communal experience that was almost
-                religious or shamanic in feeling, feedback that was most unexpected but one that I would like to further
-                explore.</p>
+                one between listeners. Afterwards, some members related a strong sense of communal bonding, similar to the type that emerges
+                through religious or shamanic experience. This feedback was most unexpected but one that I would like to
+                explore in the future.</p>
 
             <h5 class="mt">FURTHER EXPERIMENTATION</h5>
             <p>The studies exhibited here barely scratch the surface of what I feel is possible; there is much more compositional
@@ -336,22 +338,22 @@
                 concept and a skeletal framework on which to build on, the next step is to further experiment and
                 develop more tools to create a richer, interactive system.
                 This new system could be used as a new compositional tool in which the composer or artist
-                defines a broad set of rules that may evolve over time in symbiosis with the interacting participant.
+                defines a broad set of rules that may evolve over time in symbiosis with the interacting participants.
                 Rather than composing a sound piece with predetermined structure and outcomes, the artist leaves much of
                 the composition up to the audience. A response to the system is unique for each individual, who
-                feed back into the system in their own way, which in turn contributes to the overall group dynamic; as
+                feeds back into the system in their own way, which in turn contributes to the overall group dynamic; as
                 a consequence, no two iterations of the installation will be the same.</p>
-            <p>As far as sound processing, developing spatial movement within the observer’s sound space given
-                finer control of the shape and motion of grains would also be of interest. Incorporating the tracker’s
-                rotation and elevation into the sounds could encourage and develop more of a kinesthetic interaction on the
-                part of the listener. I am interested to see more of a relationship between sound and movement where the
+            <p>Possessing finer control of the shape and motion of grains would also be of interest in order to develop
+                spatial movement within the observer’s sound space. This can be used in conjunction with dynamic spatial
+                patterns of the body, to account for motions that convey intent, in order to develop a stronger kinesthetic
+                interaction on the part of the listener. I am interested to see more of a relationship between sound and movement where the
                 listener conducts the musical scene and the body is used to play the instrument. Whether this can encourage
                 deeper listening by tuning into ourselves, provide some meditative, therapeutic effect, or simply be a form
                 of expression remains to be determined. Understanding some of the psychophysiological responses of spatial
-                sound movement based on kinesthetic interaction is something to be further researched.
+                sound based on kinesthetic interaction is something to be further researched.
             </p>
         </div>
-        <div class="mt col-lg-6">
+        <div class="col-lg-6">
             <img class="mt img-responsive" src="assets/img/audience.jpg">
             <img class="mt img-responsive" src="assets/img/Q&A%202.jpg">
             <img class="mt img-responsive" src="assets/img/ssi-light.jpg">
